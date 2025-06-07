@@ -213,7 +213,7 @@ const PDFMerger = () => {
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Combinez facilement plusieurs fichiers PDF en un seul document. 
-              Rapide, sécurisé et entièrement gratuit.
+              Rapide, sécurisé et Utile.
             </p>
           </div>
 
