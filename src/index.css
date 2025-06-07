@@ -1,0 +1,134 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 255 255 255;
+    --foreground: 15 23 42;
+
+    --card: 255 255 255;
+    --card-foreground: 15 23 42;
+
+    --popover: 255 255 255;
+    --popover-foreground: 15 23 42;
+
+    --primary: 15 15 46;
+    --primary-foreground: 248 250 252;
+
+    --secondary: 240 244 248;
+    --secondary-foreground: 15 23 42;
+
+    --muted: 240 244 248;
+    --muted-foreground: 100 116 139;
+
+    --accent: 240 244 248;
+    --accent-foreground: 15 23 42;
+
+    --destructive: 239 68 68;
+    --destructive-foreground: 248 250 252;
+
+    --border: 226 232 240;
+    --input: 226 232 240;
+    --ring: 59 130 246;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-inter;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  .code-font {
+    @apply font-mono;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-violet-600 via-cyan-500 to-violet-600 bg-clip-text text-transparent;
+  }
+  
+  .tech-gradient {
+    @apply bg-gradient-to-br from-navy-900 via-violet-900 to-navy-800;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/20;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-violet-600 to-cyan-500 hover:from-violet-700 hover:to-cyan-600 text-white font-medium px-6 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-violet-500/25 transform hover:-translate-y-1;
+  }
+  
+  .btn-secondary {
+    @apply bg-white/10 backdrop-blur-sm border border-white/20 text-white font-medium px-6 py-3 rounded-xl transition-all duration-300 hover:bg-white/20 hover:border-white/30;
+  }
+  
+  .section-fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+  
+  .section-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-b from-violet-500 to-cyan-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply from-violet-600 to-cyan-600;
+}
+
+/* File drop zone styles */
+.drop-zone {
+  @apply border-2 border-dashed border-violet-300 bg-violet-50/50 rounded-xl p-8 text-center transition-all duration-300;
+}
+
+.drop-zone.dragover {
+  @apply border-violet-500 bg-violet-100/70 scale-105;
+}
+
+.drop-zone.dragover * {
+  pointer-events: none;
+}
